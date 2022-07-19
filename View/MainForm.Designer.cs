@@ -165,6 +165,7 @@ namespace EnterTarget
             this.dtgvDailyTarget.RowHeadersWidth = 51;
             this.dtgvDailyTarget.Size = new System.Drawing.Size(370, 307);
             this.dtgvDailyTarget.TabIndex = 3;
+            this.dtgvDailyTarget.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDailyTarget_CellClick);
             // 
             // tbRight
             // 
@@ -227,6 +228,7 @@ namespace EnterTarget
             this.btDelete.TabIndex = 1;
             this.btDelete.TextColor = System.Drawing.Color.Black;
             this.btDelete.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btFix
             // 
@@ -252,6 +254,7 @@ namespace EnterTarget
             this.btFix.TabIndex = 2;
             this.btFix.TextColor = System.Drawing.Color.Black;
             this.btFix.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btFix.Click += new System.EventHandler(this.btFix_Click);
             // 
             // tbpnInfoRight
             // 
@@ -321,20 +324,22 @@ namespace EnterTarget
             this.txtTargetOP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTargetOP.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTargetOP.Location = new System.Drawing.Point(76, 33);
-            this.txtTargetOP.Margin = new System.Windows.Forms.Padding(2, 2, 100, 2);
+            this.txtTargetOP.Margin = new System.Windows.Forms.Padding(2, 2, 200, 2);
             this.txtTargetOP.Name = "txtTargetOP";
-            this.txtTargetOP.Size = new System.Drawing.Size(196, 24);
+            this.txtTargetOP.Size = new System.Drawing.Size(96, 24);
             this.txtTargetOP.TabIndex = 5;
+            this.txtTargetOP.TextChanged += new System.EventHandler(this.txtTargetOP_TextChanged);
             // 
             // txtTargetScrap
             // 
             this.txtTargetScrap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTargetScrap.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTargetScrap.Location = new System.Drawing.Point(76, 64);
-            this.txtTargetScrap.Margin = new System.Windows.Forms.Padding(2, 2, 100, 2);
+            this.txtTargetScrap.Margin = new System.Windows.Forms.Padding(2, 2, 200, 2);
             this.txtTargetScrap.Name = "txtTargetScrap";
-            this.txtTargetScrap.Size = new System.Drawing.Size(196, 24);
+            this.txtTargetScrap.Size = new System.Drawing.Size(96, 24);
             this.txtTargetScrap.TabIndex = 6;
+            this.txtTargetScrap.TextChanged += new System.EventHandler(this.txtTargetScrap_TextChanged);
             // 
             // lbModel
             // 
@@ -382,20 +387,22 @@ namespace EnterTarget
             this.txtScrap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtScrap.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScrap.Location = new System.Drawing.Point(113, 70);
-            this.txtScrap.Margin = new System.Windows.Forms.Padding(2, 2, 100, 2);
+            this.txtScrap.Margin = new System.Windows.Forms.Padding(2, 2, 180, 2);
             this.txtScrap.Name = "txtScrap";
-            this.txtScrap.Size = new System.Drawing.Size(158, 24);
+            this.txtScrap.Size = new System.Drawing.Size(78, 24);
             this.txtScrap.TabIndex = 5;
+            this.txtScrap.TextChanged += new System.EventHandler(this.txtScrap_TextChanged);
             // 
             // txtOutput
             // 
             this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOutput.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOutput.Location = new System.Drawing.Point(113, 37);
-            this.txtOutput.Margin = new System.Windows.Forms.Padding(2, 2, 100, 2);
+            this.txtOutput.Margin = new System.Windows.Forms.Padding(2, 2, 180, 2);
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(158, 24);
+            this.txtOutput.Size = new System.Drawing.Size(78, 24);
             this.txtOutput.TabIndex = 4;
+            this.txtOutput.TextChanged += new System.EventHandler(this.txtOutput_TextChanged);
             // 
             // label2
             // 
