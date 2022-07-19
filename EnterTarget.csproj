@@ -59,6 +59,7 @@
     <Compile Include="Controller\DatabaseUtils.cs" />
     <Compile Include="Controller\sqlSOFTCon.cs" />
     <Compile Include="Model\GetSOFTdata.cs" />
+    <Compile Include="Model\SaveData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\MainForm.cs">
@@ -94,6 +95,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\service.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

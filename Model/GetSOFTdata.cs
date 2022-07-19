@@ -15,7 +15,7 @@ namespace EnterTarget
             DataTable dt = new DataTable();
             sqlSOFTCon sqlSOFTCon = new sqlSOFTCon();
             StringBuilder sqlGetData = new StringBuilder();
-            sqlGetData.Append("SELECT distinct model as Model, '0' as OUTPUT, '0' as SCRAP FROM m_ERPMQC_REALTIME where model != ''");
+            sqlGetData.Append("SELECT distinct model as MODEL, '0' as OUTPUT, '0' as SCRAP FROM m_ERPMQC_REALTIME where model != ''");
             sqlSOFTCon.sqlDataAdapterFillDatatable(sqlGetData.ToString(), ref dt);
             return dt;
         }
