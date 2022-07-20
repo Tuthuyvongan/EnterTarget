@@ -219,57 +219,37 @@ namespace EnterTarget
             }
 
         }
-
+        public int number = 0;
         private void txtOutput_TextChanged(object sender, EventArgs e)
         {
-            if (txtOutput.Text == null || txtOutput.Text == string.Empty || txtOutput.Text == "" || IsNumericType(txtOutput.Text) == false)
-                SaveData.op = 0;
+            if (Int32.TryParse(txtOutput.Text, out number) == false)
+                SaveData.op = number;
             else
                 SaveData.op = int.Parse(txtOutput.Text);
         }
 
         private void txtScrap_TextChanged(object sender, EventArgs e)
         {
-            if (txtScrap.Text == null || txtScrap.Text == string.Empty || txtScrap.Text == "" || IsNumericType(txtScrap.Text) == false)
-                SaveData.scrap = 0;
+            if (Int32.TryParse(txtScrap.Text, out number) == false)
+                SaveData.scrap = number;
             else
                 SaveData.scrap = int.Parse(txtScrap.Text);
         }
 
         private void txtTargetOP_TextChanged(object sender, EventArgs e)
         {
-            if (txtTargetOP.Text == null || txtTargetOP.Text == string.Empty || txtTargetOP.Text == "" || IsNumericType(txtTargetOP.Text) == false)
-                SaveData.opTarget = 0;
+            if (Int32.TryParse(txtTargetOP.Text, out number) == false)
+                SaveData.opTarget = number;
             else
                 SaveData.opTarget = int.Parse(txtTargetOP.Text);
         }
 
         private void txtTargetScrap_TextChanged(object sender, EventArgs e)
         {
-            if (txtTargetScrap.Text == null || txtTargetScrap.Text == string.Empty || txtTargetScrap.Text == "" || IsNumericType(txtTargetScrap.Text) == false)
-                SaveData.scrapTarget = 0;
+            if (Int32.TryParse(txtTargetScrap.Text, out number) == false)
+                SaveData.scrapTarget = number;
             else
                 SaveData.scrapTarget = int.Parse(txtTargetScrap.Text);
-        }
-        public static bool IsNumericType(object o)
-        {
-            switch (Type.GetTypeCode(o.GetType()))
-            {
-                case TypeCode.Byte:
-                case TypeCode.SByte:
-                case TypeCode.UInt16:
-                case TypeCode.UInt32:
-                case TypeCode.UInt64:
-                case TypeCode.Int16:
-                case TypeCode.Int32:
-                case TypeCode.Int64:
-                case TypeCode.Decimal:
-                case TypeCode.Double:
-                case TypeCode.Single:
-                    return true;
-                default:
-                    return false;
-            }
         }
     }
 }
