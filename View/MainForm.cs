@@ -166,6 +166,7 @@ namespace EnterTarget
                 cmd = UploadLogic.Insert(SaveData.Date, SaveData.AllModel, SaveData.op, SaveData.scrap);
                 uploadWithTransactionSupport(cmd);
                 updateDtgv();
+                txtFind.Text = "";
             }
             else
                 MessageBox.Show("Please enter output and scrap", "Error");
@@ -221,34 +222,54 @@ namespace EnterTarget
 
         private void txtOutput_TextChanged(object sender, EventArgs e)
         {
-            if (dtgvAllModel.Rows.Count > 0)
-                SaveData.op = int.Parse(txtOutput.Text);
-            else
+            if (txtOutput.Text == null || txtOutput.Text == string.Empty || txtOutput.Text == "" || IsNumericType(txtOutput.Text) == false)
                 SaveData.op = 0;
+            else
+                SaveData.op = int.Parse(txtOutput.Text);
         }
 
         private void txtScrap_TextChanged(object sender, EventArgs e)
         {
-            if (dtgvAllModel.Rows.Count > 0)
-                SaveData.scrap = int.Parse(txtScrap.Text);
-            else
+            if (txtScrap.Text == null || txtScrap.Text == string.Empty || txtScrap.Text == "" || IsNumericType(txtScrap.Text) == false)
                 SaveData.scrap = 0;
+            else
+                SaveData.scrap = int.Parse(txtScrap.Text);
         }
 
         private void txtTargetOP_TextChanged(object sender, EventArgs e)
         {
-            if (dtgvDailyTarget.Rows.Count > 0)
-                SaveData.opTarget = int.Parse(txtTargetOP.Text);
-            else
+            if (txtTargetOP.Text == null || txtTargetOP.Text == string.Empty || txtTargetOP.Text == "" || IsNumericType(txtTargetOP.Text) == false)
                 SaveData.opTarget = 0;
+            else
+                SaveData.opTarget = int.Parse(txtTargetOP.Text);
         }
 
         private void txtTargetScrap_TextChanged(object sender, EventArgs e)
         {
-            if (dtgvDailyTarget.Rows.Count > 0)
-                SaveData.scrapTarget = int.Parse(txtTargetScrap.Text);
-            else
+            if (txtTargetScrap.Text == null || txtTargetScrap.Text == string.Empty || txtTargetScrap.Text == "" || IsNumericType(txtTargetScrap.Text) == false)
                 SaveData.scrapTarget = 0;
+            else
+                SaveData.scrapTarget = int.Parse(txtTargetScrap.Text);
+        }
+        public static bool IsNumericType(object o)
+        {
+            switch (Type.GetTypeCode(o.GetType()))
+            {
+                case TypeCode.Byte:
+                case TypeCode.SByte:
+                case TypeCode.UInt16:
+                case TypeCode.UInt32:
+                case TypeCode.UInt64:
+                case TypeCode.Int16:
+                case TypeCode.Int32:
+                case TypeCode.Int64:
+                case TypeCode.Decimal:
+                case TypeCode.Double:
+                case TypeCode.Single:
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 }
